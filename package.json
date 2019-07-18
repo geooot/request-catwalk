@@ -1,0 +1,53 @@
+{
+    "name": "request-catwalk",
+    "version": "1.0.0",
+    "description": "👠 catwalk generates pages that allow you to create a form for your APIs without having to do it yourself",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/geooot/request-catwalk.git"
+    },
+    "author": "George Thayamkery @geooot",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/geooot/request-catwalk/issues"
+    },
+    "homepage": "https://github.com/geooot/request-catwalk#readme",
+    "devDependencies": {
+        "@oclif/dev-cli": "^1",
+        "@oclif/plugin-help": "^2",
+        "@oclif/test": "^1",
+        "@oclif/tslint": "^3",
+        "@types/node": "^10",
+        "ts-node": "^8",
+        "tslint": "^5",
+        "typescript": "^3.3"
+    },
+    "engines": {
+        "node": ">=8.0.0"
+    },
+    "oclif": {
+        "commands": "./lib/commands",
+        "bin": "catwalk",
+        "devPlugins": [
+            "@oclif/plugin-help"
+        ]
+    },
+    "files": [
+        "/lib",
+        "/npm-shrinkwrap.json",
+        "/oclif.manifest.json",
+        "/yarn.lock"
+    ],
+    "dependencies": {
+        "@oclif/command": "^1.5.16",
+        "@oclif/config": "^1.13.2",
+        "tslib": "^1.10.0"
+    },
+    "scripts": {
+        "postpack": "rm -f oclif.manifest.json",
+        "posttest": "tslint -p test -t stylish",
+        "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+        "version": "oclif-dev readme && git add README.md"
+    }
+}
