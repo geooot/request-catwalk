@@ -5,7 +5,21 @@ This CLI generates pages that allow you to create a form for your APIs without h
 Currently this only works with GET requests and Query String parameters.
 
 ## Installation
-Probably npm at some point...
+
+This repo uses the new fancy [GitHub Package Registry](https://github.com/features/package-registry)
+
+Before installing, make sure to authenticate with GitHub Package Registry or using a `.npmrc` file. See "[Configuring npm for use with GitHub Package Registry](https://help.github.com/en/articles/configuring-npm-for-use-with-github-package-registry#authenticating-to-github-package-registry)."
+
+
+`$ npm install @geooot/request-catwalk`
+
+Or add this package to your `package.json` file:
+
+```
+"dependencies": {
+    "@geooot/request-catwalk": "1.0.0"
+}
+```
 
 ## Usage
 ```
@@ -16,7 +30,7 @@ COMMANDS
   help   display help for catwalk
 ```
 
-### `build`
+### `$ catwalk build`
 ```
 USAGE
   $ catwalk build [FILE]
