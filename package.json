@@ -33,6 +33,9 @@
             "@oclif/plugin-help"
         ]
     },
+    "bin": {
+    	"catwalk": "./bin/run"
+    },
     "files": [
         "/lib",
         "/npm-shrinkwrap.json",
