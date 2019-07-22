@@ -23,11 +23,13 @@ Or add this package to your `package.json` file:
 
 ## Usage
 ```
-$ catwalk [COMMAND]
+USAGE
+  $ catwalk [COMMAND]
 
 COMMANDS
-  build  build a request page for a request definition json file
-  help   display help for catwalk
+  build   build a request page for a request definition json file
+  help    display help for catwalk
+  server  build a request page for a request definition json file then serve it on a page
 ```
 
 ### `$ catwalk build`
@@ -41,6 +43,19 @@ OPTIONS
 
 EXAMPLE
   $ catwalk build definition.json
+```
+
+### `$ catwalk server`
+```
+USAGE
+  $ catwalk server [FILE]
+
+OPTIONS
+  -h, --help       show CLI help
+  -p, --port=port  network port to serve catwalk page. (Default: 8080)
+
+EXAMPLE
+  $ catwalk server definition.json
 ```
 
 ## Definition Schema
