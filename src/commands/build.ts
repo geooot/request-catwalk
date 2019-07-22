@@ -33,6 +33,11 @@ export default class Build extends Command {
     async run() {
         const { args, flags } = this.parse(Build)
 
+        if(!args.file){
+            console.error("ERROR: Please file name to read");
+            return;
+        }
+
         let manifest = JSON.parse(fs.readFileSync(args.file).toString());
 
         let outputHtml = Build.generateHtml(manifest);
