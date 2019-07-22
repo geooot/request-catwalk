@@ -15,7 +15,7 @@ export default class Server extends Command {
     
     static flags = {
         help: flags.help({ char: 'h' }),
-        port: flags.integer({char: 'p', description: "Output file to write generated HTML (if not specified, output will be stdout)"}) 
+        port: flags.integer({char: 'p', description: "network port to serve catwalk page. (Default: 8080)"}) 
     }
 
     static args = [{ name: 'file' }]
