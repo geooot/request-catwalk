@@ -2,6 +2,7 @@
 👠 Strut your API Stuff!
 
 This CLI generates pages that allow you to create a form for your APIs without having to do it yourself. Great for making a presentation showing off some API
+
 Currently this only works with GET requests and Query String parameters.
 
 ## Installation
