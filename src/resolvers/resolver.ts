@@ -3,6 +3,7 @@ import { JsonConfigurable, JsonConfigurableInterface } from '../configurables/js
 import { StringConfigurable, StringConfigurableInterface } from '../configurables/stringConfigurable';
 import { objectToArray } from '../utils/utils';
 import { BoolConfigurable } from '../configurables/boolConfigurable';
+import { JsonArrayConfigurable } from '../configurables/jsonArrayConfigurable';
 
 export interface ResolverInterface {
     requestType: string,
@@ -34,6 +35,8 @@ export class Resolver implements ResolverInterface {
                 tmp.queryParams = queryParams.map((qp:any) => {
                     if(qp["type"] == "JSON"){
                         return JsonConfigurable.build(qp);
+                    }else if(qp["type"] == "JSON_ARRAY"){
+                        return JsonArrayConfigurable.build(qp);
                     }else if(qp["type"] == "BOOL"){
                         return BoolConfigurable.build(qp);
                     }else{
@@ -53,6 +56,8 @@ export class Resolver implements ResolverInterface {
                 tmp.body = body.map((b:any) => {
                     if(b["type"] == "JSON"){
                         return JsonConfigurable.build(b);
+                    }else if(b["type"] == "JSON_ARRAY"){
+                        return JsonArrayConfigurable.build(b);
                     }else if(b["type"] == "BOOL"){
                         return BoolConfigurable.build(b);
                     }else{

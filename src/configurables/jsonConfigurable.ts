@@ -2,6 +2,7 @@ import { Configurable } from './configurable';
 import { StringConfigurable, StringConfigurableInterface } from './stringConfigurable';
 import { objectToArray } from '../utils/utils';
 import { BoolConfigurable } from './boolConfigurable';
+import { JsonArrayConfigurable } from './jsonArrayConfigurable';
 
 export interface JsonConfigurableInterface extends Configurable {
     data?: Configurable[]
@@ -26,7 +27,9 @@ export class JsonConfigurable implements JsonConfigurableInterface {
                 tmp.data = data.map(c => {
                     if(c["type"] == "JSON"){
                         return JsonConfigurable.build(c);
-                    }if (c["type"] == "BOOL"){
+                    }else if(c["type"] == "JSON_ARRAY"){
+                        return JsonArrayConfigurable.build(c);
+                    }else if (c["type"] == "BOOL"){
                         return BoolConfigurable.build(c);
                     }else{
                         return StringConfigurable.build(c);
